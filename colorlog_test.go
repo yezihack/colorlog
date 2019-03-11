@@ -33,9 +33,10 @@ func ExampleNew() {
 	//输出结果
 	fmt.Print(buff.String())
 }
+
 //把日志写到文件里去
 func ExampleFile() {
-	file := "./color_log.txt"
+	file := "./log/color_log.txt"
 	f, err := os.OpenFile(file, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		panic(err)
@@ -62,15 +63,13 @@ func TestExampleColorLog(t *testing.T) {
 	ExampleFile()
 }
 
-
-
 func BenchmarkDebug(b *testing.B) {
 	b.StopTimer()
 	buff := new(bytes.Buffer)
 	lg := New(buff, true)
 	//输出结果
 	b.StartTimer()
-	for i := 0; i < b.N; i ++ {
+	for i := 0; i < b.N; i++ {
 		lg.Debug("人间正道是沧桑 ~ debug")
 	}
 }
@@ -80,7 +79,7 @@ func BenchmarkInfo(b *testing.B) {
 	lg := New(buff, true)
 	//输出结果
 	b.StartTimer()
-	for i := 0; i < b.N; i ++ {
+	for i := 0; i < b.N; i++ {
 		lg.Info("人间正道是沧桑 ~ info")
 	}
 }
@@ -90,7 +89,7 @@ func BenchmarkWarning(b *testing.B) {
 	lg := New(buff, true)
 	//输出结果
 	b.StartTimer()
-	for i := 0; i < b.N; i ++ {
+	for i := 0; i < b.N; i++ {
 		lg.Warning("人间正道是沧桑 ~ warning")
 	}
 }
@@ -101,7 +100,7 @@ func BenchmarkError(b *testing.B) {
 	lg := New(buff, true)
 	//输出结果
 	b.StartTimer()
-	for i := 0; i < b.N; i ++ {
+	for i := 0; i < b.N; i++ {
 		lg.Error("人间正道是沧桑 ~ err")
 	}
 }
