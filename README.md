@@ -1,4 +1,4 @@
-# logcolor彩色日志
+# colorlog彩色日志
 > 带有颜色的日志, 分四个等级, debug < info < warning < error
 
 
