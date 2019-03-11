@@ -4,13 +4,13 @@
 
 # 基本应用
 ```
-logcolor.Info("      饮酒·其五     ")
-logcolor.Info("              -----%s", "陶渊明")
-logcolor.Debug("结庐在人境，而无车马喧。")
-logcolor.Info("问君何能尔？心远地自偏。")
-logcolor.Warning("采菊东篱下，悠然见南山。")
-logcolor.Error("山气日夕佳，飞鸟相与还。")
-logcolor.Debug("此中有真意，欲辨已忘言。")
+colorlog.Info("      饮酒·其五     ")
+colorlog.Info("              -----%s", "陶渊明")
+colorlog.Debug("结庐在人境，而无车马喧。")
+colorlog.Info("问君何能尔？心远地自偏。")
+colorlog.Warning("采菊东篱下，悠然见南山。")
+colorlog.Error("山气日夕佳，飞鸟相与还。")
+colorlog.Debug("此中有真意，欲辨已忘言。")
 ```
 
 ## 输出效果
@@ -22,7 +22,7 @@ logcolor.Debug("此中有真意，欲辨已忘言。")
 ```
 //把结果输入到buffer里
 buff := new(bytes.Buffer)
-lg := New(buff, true)
+lg := logcolor.New(buff, true)
 lg.Warning("人间正道是沧桑")
 //输出结果
 fmt.Print(buff.String())
@@ -36,7 +36,7 @@ if err != nil {
     panic(err)
 }
 buff := new(bytes.Buffer)
-lg := New(buff, true)
+lg := logcolor.New(buff, true)
 lg.Warning("人间正道是沧桑")
 //输出结果
 n, err := f.Write(buff.Bytes())
@@ -49,7 +49,7 @@ fmt.Println("写入字节: ", n)
 ## 自定义等级
 
 ```
-lg := New(os.Stdout, true)
+lg := logcolor.New(os.Stdout, true)
 lg.SetLevel(INFO)
 lg.Info("人生如逆旅，我亦是行人-------------%s", "出自宋代苏轼")
 lg.Debug("输不出来的")
