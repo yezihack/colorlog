@@ -8,7 +8,7 @@ colorlog.Info("      饮酒·其五     ")
 colorlog.Info("              -----%s", "陶渊明")
 colorlog.Debug("结庐在人境，而无车马喧。")
 colorlog.Info("问君何能尔？心远地自偏。")
-colorlog.Warning("采菊东篱下，悠然见南山。")
+colorlog.Warn("采菊东篱下，悠然见南山。")
 colorlog.Error("山气日夕佳，飞鸟相与还。")
 colorlog.Debug("此中有真意，欲辨已忘言。")
 ```
@@ -23,7 +23,7 @@ colorlog.Debug("此中有真意，欲辨已忘言。")
 //把结果输入到buffer里
 buff := new(bytes.Buffer)
 lg := logcolor.New(buff, true)
-lg.Warning("人间正道是沧桑")
+lg.Warn("人间正道是沧桑")
 //输出结果
 fmt.Print(buff.String())
 ```
@@ -37,7 +37,7 @@ if err != nil {
 }
 buff := new(bytes.Buffer)
 lg := logcolor.New(buff, true)
-lg.Warning("人间正道是沧桑")
+lg.Warn("人间正道是沧桑")
 //输出结果
 n, err := f.Write(buff.Bytes())
 if err != nil {

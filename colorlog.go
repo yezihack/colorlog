@@ -23,7 +23,7 @@ const (
 type ColorLogger interface {
 	Debug(format string, s ...interface{})
 	Info(format string, s ...interface{})
-	Warning(format string, s ...interface{})
+	Warn(format string, s ...interface{})
 	Error(format string, s ...interface{})
 	SetLevel(level int) //设置等级
 }
@@ -126,7 +126,7 @@ func (l *Logger) Info(format string, s ...interface{}) {
 }
 
 //输出警告信息
-func (l *Logger) Warning(format string, s ...interface{}) {
+func (l *Logger) Warn(format string, s ...interface{}) {
 	if l.Level > WARNING {
 		return
 	}
@@ -147,8 +147,8 @@ func Debug(format string, s ...interface{}) {
 func Info(format string, s ...interface{}) {
 	defaultLogger.Info(format, s...)
 }
-func Warning(format string, s ...interface{}) {
-	defaultLogger.Warning(format, s...)
+func Warn(format string, s ...interface{}) {
+	defaultLogger.Warn(format, s...)
 }
 func Error(format string, s ...interface{}) {
 	defaultLogger.Error(format, s...)
