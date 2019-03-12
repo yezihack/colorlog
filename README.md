@@ -1,5 +1,5 @@
 # colorlog彩色日志
-> 带有颜色的日志, 分四个等级, debug < info < warning < error
+> 带有颜色的日志, 一般应用于console,命令行使用. 分四个等级, debug < info < warning < error
 
 
 # 基本应用
